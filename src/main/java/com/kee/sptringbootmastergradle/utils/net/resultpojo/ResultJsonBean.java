@@ -1,4 +1,4 @@
-package com.kee.sptringbootmastergradle.entity;
+package com.kee.sptringbootmastergradle.utils.net.resultpojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -24,6 +24,15 @@ public class ResultJsonBean<T> {
         return new ResultJsonBean().setSystemError(ErrorTypeEnum.OK).setData(data);
     }
 
+    public static ResultJsonBean returnError(ErrorTypeEnum errorTypeEnum) {
+        return new ResultJsonBean().setSystemError(errorTypeEnum);
+    }
+
+    public static ResultJsonBean returnError(ErrorTypeEnum errorTypeEnum, String errMsg) {
+        return new ResultJsonBean().setSystemError(errorTypeEnum).appendErrMsg(errMsg);
+    }
+
+
 //    public boolean isSuccess() {
 //        return errCode == ErrorTypeEnum.OK.getErrcode();
 //    }
@@ -37,6 +46,17 @@ public class ResultJsonBean<T> {
     public ResultJsonBean setSystemError(ErrorTypeEnum errBean) {
         this.setErrCode(errBean.getErrcode());
         this.setErrMsg(errBean.getErrmessage());
+        return this;
+    }
+
+    public ResultJsonBean setSystemError(ErrorTypeEnum errBean, String errMsg) {
+        this.setErrCode(errBean.getErrcode());
+        this.setErrMsg(errBean.getErrmessage() + ":" + errMsg);
+        return this;
+    }
+
+    public ResultJsonBean appendErrMsg(String errMsg) {
+        this.errMsg += "," + errMsg;
         return this;
     }
 
