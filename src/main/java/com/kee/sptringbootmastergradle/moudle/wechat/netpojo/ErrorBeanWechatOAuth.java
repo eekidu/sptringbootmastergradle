@@ -1,6 +1,6 @@
 package com.kee.sptringbootmastergradle.moudle.wechat.netpojo;
 
-public class ErrorBean {
+public class ErrorBeanWechatOAuth {
     /**
      * errcode : 40013
      * errmsg : invalid appid, hints: [ req_id: sNmCPa0454th41 ]
@@ -27,7 +27,7 @@ public class ErrorBean {
 
     @Override
     public String toString() {
-        return "ErrorBean{" +
+        return "ErrorBeanWechatOAuth{" +
                 "errcode=" + errcode +
                 ", errmsg='" + errmsg + '\'' +
                 '}';

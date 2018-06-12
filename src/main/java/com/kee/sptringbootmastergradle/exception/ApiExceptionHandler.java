@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 public class ApiExceptionHandler {
-    @ExceptionHandler(value = Exception.class)
+//    @ExceptionHandler(value = Exception.class)
     public ResultJsonBean defaultErrorHandler(HttpServletRequest request, Exception ex) throws Exception {
         ex.printStackTrace();
-        return ResultJsonBean.returnError(ErrorTypeEnum.UNKONW_ERR, ex.getMessage());
+        return ResultJsonBean.returnError(ErrorTypeEnum.UNKONW_ERR, "".equals(ex.getMessage()) || ex.getMessage() == null ? "未知" : ex.getMessage());
     }
 }

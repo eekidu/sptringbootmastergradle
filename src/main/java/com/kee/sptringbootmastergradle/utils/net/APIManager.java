@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.kee.sptringbootmastergradle.moudle.wechat.api.WeChatOAuthAPI;
 import com.kee.sptringbootmastergradle.moudle.wechat.api.WeChatPayAPI;
-import com.kee.sptringbootmastergradle.utils.net.converter.MyGsonConverterFactory;
+import com.kee.sptringbootmastergradle.utils.net.converter.gson.MyGsonConverterFactory;
 import com.kee.sptringbootmastergradle.utils.net.intercept.WechatExceptionIntercept;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

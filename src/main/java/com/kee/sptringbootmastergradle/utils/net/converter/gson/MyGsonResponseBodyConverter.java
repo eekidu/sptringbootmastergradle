@@ -1,4 +1,4 @@
-package com.kee.sptringbootmastergradle.utils.net.converter;
+package com.kee.sptringbootmastergradle.utils.net.converter.gson;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;

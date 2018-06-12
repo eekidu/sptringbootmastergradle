@@ -1,16 +1,19 @@
 package com.kee.sptringbootmastergradle.moudle.wechat.netpojo.wechatpay;
 
 import com.kee.sptringbootmastergradle.moudle.wechat.annotation.ApiRequestField;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  * 微信支付统一下单实体
  * https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1
  */
+@Root(name = "xml", strict = false)
 public class Unifiedorder {
     /**
      * 应用ID appid 是 String(32) wxd678efh567hg6787 微信开放平台审核通过的应用APPID
      */
-    @ApiRequestField()
+    @Element
     private String appid;
 
     /**
@@ -267,5 +270,31 @@ public class Unifiedorder {
 
     public String getScene_info() {
         return scene_info;
+    }
+
+    @Override
+    public String toString() {
+        return "Unifiedorder{" +
+                "appid='" + appid + '\'' +
+                ", body='" + body + '\'' +
+                ", mch_id='" + mch_id + '\'' +
+                ", nonce_str='" + nonce_str + '\'' +
+                ", notify_url='" + notify_url + '\'' +
+                ", out_trade_no='" + out_trade_no + '\'' +
+                ", spbill_create_ip='" + spbill_create_ip + '\'' +
+                ", total_fee='" + total_fee + '\'' +
+                ", trade_type='" + trade_type + '\'' +
+                ", sign='" + sign + '\'' +
+                ", device_info='" + device_info + '\'' +
+                ", sign_type='" + sign_type + '\'' +
+                ", detail='" + detail + '\'' +
+                ", attach='" + attach + '\'' +
+                ", fee_type='" + fee_type + '\'' +
+                ", time_start='" + time_start + '\'' +
+                ", time_expire='" + time_expire + '\'' +
+                ", goods_tag='" + goods_tag + '\'' +
+                ", limit_pay='" + limit_pay + '\'' +
+                ", scene_info='" + scene_info + '\'' +
+                '}';
     }
 }

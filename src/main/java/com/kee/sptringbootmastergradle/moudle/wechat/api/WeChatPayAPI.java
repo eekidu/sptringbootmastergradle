@@ -1,5 +1,6 @@
 package com.kee.sptringbootmastergradle.moudle.wechat.api;
 
+import com.kee.sptringbootmastergradle.moudle.wechat.netpojo.wechatpay.UnifiedorderResult;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
@@ -13,5 +14,5 @@ public interface WeChatPayAPI {
      * @return
      */
     @POST("unifiedorder")
-    Call<String> unifiedorder(@Body String orderInfo);
+    Call<UnifiedorderResult> unifiedorder(@Body String orderInfo);
 }
